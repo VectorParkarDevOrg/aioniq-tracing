@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  test:
+    name: Lint, typecheck, test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+      - name: Check style
+        run: ruff check .
+      - name: Check formatting
+        run: ruff format --check .
+      - name: Run mypy
+        run: mypy aioniq_tracing --ignore-missing-imports --no-strict-optional
+      - name: Run tests
+        run: pytest tests/ -v

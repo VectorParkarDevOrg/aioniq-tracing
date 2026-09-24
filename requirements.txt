@@ -1,0 +1,6 @@
+# AioniQ Tracing SDK dependencies -- standard OTel only, deliberately no
+# per-vendor instrumentation package (openlit, opentelemetry-instrumentation-
+# openai, etc.). This package never monkey-patches a third-party client.
+opentelemetry-api>=1.27.0
+opentelemetry-sdk>=1.27.0
+opentelemetry-exporter-otlp-proto-http>=1.27.0
