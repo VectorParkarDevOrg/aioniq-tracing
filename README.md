@@ -27,16 +27,16 @@ class of bug can't happen here — see `tests/test_cancellation_safety.py`.
 
 ## Install
 
-From a tagged release on GitHub:
+```bash
+pip install aioniq-tracing
+```
+
+[![PyPI](https://img.shields.io/pypi/v/aioniq-tracing)](https://pypi.org/project/aioniq-tracing/)
+
+Or from a tagged release on GitHub:
 
 ```bash
 pip install "aioniq-tracing @ git+https://github.com/VectorParkarDevOrg/aioniq-tracing.git@v0.1.0"
-```
-
-or the built wheel attached to the [release](https://github.com/VectorParkarDevOrg/aioniq-tracing/releases):
-
-```bash
-pip install https://github.com/VectorParkarDevOrg/aioniq-tracing/releases/download/v0.1.0/aioniq_tracing-0.1.0-py3-none-any.whl
 ```
 
 Requires Python 3.10+.
@@ -83,8 +83,8 @@ git tag v0.1.1 && git push origin v0.1.1
 ```
 
 The Release workflow builds the wheel and source package, attaches them to a
-GitHub Release, and publishes to PyPI (once the `PYPI_PUBLISH` repository
-variable is `true` — see the workflow file).
+GitHub Release, and publishes to PyPI via trusted publishing (no token
+stored; gated by the `PYPI_PUBLISH` repository variable).
 
 ## License
 
