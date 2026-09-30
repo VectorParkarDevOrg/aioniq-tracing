@@ -27,14 +27,16 @@ class of bug can't happen here — see `tests/test_cancellation_safety.py`.
 
 ## Install
 
-```bash
-pip install aioniq-tracing
-```
-
-Or straight from GitHub (a tagged release, or `main`):
+From a tagged release on GitHub:
 
 ```bash
 pip install "aioniq-tracing @ git+https://github.com/VectorParkarDevOrg/aioniq-tracing.git@v0.1.0"
+```
+
+or the built wheel attached to the [release](https://github.com/VectorParkarDevOrg/aioniq-tracing/releases):
+
+```bash
+pip install https://github.com/VectorParkarDevOrg/aioniq-tracing/releases/download/v0.1.0/aioniq_tracing-0.1.0-py3-none-any.whl
 ```
 
 Requires Python 3.10+.
