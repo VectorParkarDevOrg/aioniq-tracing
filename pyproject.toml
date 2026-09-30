@@ -1,17 +1,37 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "aioniq-tracing"
 version = "0.1.0"
 description = "First-party OpenTelemetry tracing SDK for agents integrating with AioniQ -- no monkey-patching, explicit spans only."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Vector (VectorParkarDevOrg)" }]
 requires-python = ">=3.10"
+keywords = ["aioniq", "opentelemetry", "tracing", "llm", "agents", "observability"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Monitoring",
+    "Typing :: Typed",
+]
 dependencies = [
     "opentelemetry-api>=1.27.0",
     "opentelemetry-sdk>=1.27.0",
     "opentelemetry-exporter-otlp-proto-http>=1.27.0",
 ]
+
+[project.urls]
+Documentation = "https://aioniqdocs.parkarlabs.in/#/1.0/tracing-sdk"
+Source = "https://github.com/VectorParkarDevOrg/aioniq-tracing"
+Issues = "https://github.com/VectorParkarDevOrg/aioniq-tracing/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -23,6 +43,9 @@ dev = [
 
 [tool.setuptools.packages.find]
 include = ["aioniq_tracing*"]
+
+[tool.setuptools.package-data]
+aioniq_tracing = ["py.typed"]
 
 [tool.ruff]
 line-length = 100
